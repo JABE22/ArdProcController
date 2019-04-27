@@ -1,0 +1,212 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16.7.2018, 22:21:09
+    Author     : Jarno Matarmaa  ( University of Tampere )
+*/
+body {
+    margin:40px 100px; padding:0px;
+    text-align:left;
+    background-image: url("img/ohra_pelto.JPG");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+div.site-branding { /* Position Logo and Text  */
+    float: left;
+}
+
+div.site-branding-logo { /* Position logo within site-branding */
+    display: inline;
+    vertical-align: middle;
+}
+
+div.site-branding-text { /* Position text within site-branding */
+    display: inline;
+    width: auto;
+    margin: auto 0;
+    vertical-align: middle;
+}
+
+div.site-buttons {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 15px 32px;
+    border-color:black;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:3px 3px 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    background-color: rgba(0,151,156, .3);
+}
+
+div.resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+
+iframe {
+    width: 100%;
+    min-height: 700px;
+    max-height: 900px;
+    cursor: pointer;
+    background: transparent;
+}
+
+img {
+    float: left;
+    display: inline-block;
+    margin-left: 20;
+    margin-right: 20;
+    margin-bottom: 10;
+    width: 50%;
+    height: auto;
+}
+
+video {
+    width: 400px;
+    height: 650px;
+}
+
+h1 {
+    text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    font-family:Tahoma, "Trebuchet MS", Helvetica, sans-serif;
+    color: black;
+    font-weight: 500;
+    text-shadow: 0px 0px 8px white;
+    display: inline-block;
+}
+
+h2 {
+    display: block;
+    text-align: left;
+    font-family:Tahoma, "Trebuchet MS", Helvetica, sans-serif;
+    text-shadow: 0px 0px 8px white;
+}
+
+h3 {
+    text-align: left;
+    text-decoration: underline;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h4 {
+    text-align: center;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+f1 {
+    text-align: center;
+    font: 18px Tahoma;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px white;
+    width:240px;
+    height:25px;
+    padding: 15px 32px;
+    border-color:white;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:7px 7px 7px;
+    background-color:greenyellow;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    -moz-border-radius:7px 7px 7px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+f2 {
+    text-align: center;
+    font: 18px Tahoma;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px white;
+    width:240px;
+    height:25px;
+    padding: 15px 32px;
+    border-color:white;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    -moz-border-radius:7px 7px 7px;
+    background-color:darkorange;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a {
+    text-decoration:none;
+    text-align: center;
+    width:85px;
+    height:25px;
+    padding: 15px 32px;
+    border-color:black;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    -moz-border-radius:7px 7px 7px;
+    background-color:#00979C;
+    opacity: 0.8;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a.menu {
+    position: absolute;
+    right: 100px;
+    width: 120px;
+    height: auto;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    opacity: 0.7;
+    display: inline-block;
+}
+
+a:link {color:white;}       /* unvisited link */
+a:visited {color:white;}    /* visited link */
+a:hover {color:orange;}     /* mouse over link */
+a:active {color:green;}     /* selected link */
+a:valid {color:greenyellow;}
+
+
+/* Style the footer */
+div.footer {
+    text-align: center;
+    color: whitesmoke;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+    left: 100px;
+    background-color: rgba(0,151,156, .6);
+    display: inline-block;
+}

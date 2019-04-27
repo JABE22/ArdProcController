@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+
+        <script type="text/javascript" src="scripts/functions.js"></script>
+        <link rel='stylesheet' type='text/css' href='css/web_index_styles.css' />
+        <meta charset="UTF-8">
+        <title>Kuivurin kamera</title>
+    </head>
+    <body>
+        <div class="site-branding">
+            <div class="site-branding-logo">
+                <img src="css/img/arduino_logo.png" alt="arduino_logo">
+            </div>
+        </div>
+        <br />
+        <div class="site-branding-text">
+            <h1 id="site-title">KUIVURIN PROSESSIVALVONTA</h1>
+        </div>
+        <a class="menu" href="gallery.html">Kuvagalleria</a>
+        <a class="menu" href="http://192.168.1.50/" target="_blank">Kontrolleri</a>
+        <br />
+        <hr />
+        <header>
+            <h2>Kontrollerin etäkäyttö</h2>
+        </header>
+        <br />
+        <div class="site-buttons">
+            <h3>LED valaisimen ja kameran hallinta</h3>          
+            <!-- Arduino controller function buttons -->
+            <br />
+            <a href="http://www.koney.fi" id="led1" target="fb_frame" 
+               onclick="showArduinoLoading(null)">LED ON</a>
+            <a href="http://192.168.1.50/?button1off" id="led0" target="fb_frame" 
+               onclick="showArduinoLoading(null)">LED OFF</a>
+            <br />
+            <br />
+            <a href="http://192.168.1.50/?button2on" target="fb_frame"
+               onclick="showArduinoLoading(null)">CAM ON</a>
+            <a href="http://192.168.1.50/?button2off" target="fb_frame"
+               onclick="showArduinoLoading(null)">CAM OFF</a>
+            <br />
+            <br />
+            <a href="http://192.168.1.50/?button3on" target="fb_frame"
+               onclick="showArduinoLoading(null)">AUTO</a>
+            <a href="http://192.168.1.50/?button3off" target="fb_frame"
+               onclick="showArduinoLoading(null)">MANU</a>
+            <br />
+            <br />
+            <!-- Ping Arduino in address 192.168.1.50 -->
+            <a class="other" href="http://192.168.1.50/" target="fb_frame"
+               onclick="showArduinoLoading(null)">Testaa yhteys</a>
+            <!-- Iframe for Arduino Uno control page. Not displayed by default -->
+            <iframe class="feedback" id="fb_frame" name="fb_frame" 
+                    onload="hideArduinoLoading()" style="display: none">               
+            </iframe> 
+            <button class="fb" id="fb" type="button" onclick="showFrame()">Näytä</button>
+            <!-- Arduino Board loading spinner -->
+            <div id="arduino_loading">
+                <div id="ard_load_spinner"></div> 
+                <h4 class="ard_spinner_text">Yhdistetään</h4>
+            </div>
+
+            <script>
+                /* Timeout not necessary, because feedback-frame calls 
+                 * hideArduinoLoading() method instantly. */
+                showArduinoLoading('5000');
+            </script>
+            <br />
+            <br />
+        </div>
+
+        <div class="resp-container">
+
+            <div id="stream_loading">
+                <div id="str_load_spinner"></div> 
+                <h4 class="str_spinner_text">Haetaan kuvaa</h4>
+            </div>
+
+
+            <script>
+                showStreamLoading();
+            </script>
+
+            <!--src="http://192.168.1.64/ISAPI/Streaming/channels/101/picture"-->
+
+            <!-- The Modal -->
+            <img class="stream"
+                 id="myImg"
+                 src="http://192.168.1.64/ISAPI/Streaming/channels/101/picture"
+                 onerror="this.src='css/img/cds-hikvision.jpg'" 
+                 alt="Yhteyttä kameraan ei voitu muodostaa" 
+                 onload="hideStreamLoading()">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01" alt="Image not found">
+                <div id="caption"></div>
+            </div>
+
+            <script>
+                modal();
+            </script>
+
+            <button class="fb" id="update_button" type="button" 
+                    onclick="updateContent('myImg', 'http://192.168.1.60/ISAPI/Streaming/channels/101/picture')">
+                Päivitä</button>
+        </div>
+        <br />
+        <div class="footer">
+            <footer>Created by Jarno Matarmaa -JAMA Softwares 2018®-</footer>
+        </div>
+        <br />
+    </body>
+</html>

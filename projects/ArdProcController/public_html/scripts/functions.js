@@ -1,0 +1,105 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/*eslint-env browser*/
+/* exported hideStreamLoading, 
+   showArduinoLoading, 
+   showFrame, 
+   updateContent, 
+   modal 
+*/
+
+
+function showStreamLoading() {
+    'use strict';
+    document.getElementById("stream_loading").style.display = "block";
+}
+
+function hideStreamLoading() {
+    'use strict';
+    document.getElementById("stream_loading").style.display = "none";
+}
+
+function hideArduinoLoading() {
+    'use strict';
+    document.getElementById("arduino_loading").style.display = "none";
+}
+
+function showArduinoLoading(timeout) {
+    'use strict';
+    document.getElementById("arduino_loading").style.display = "block";
+
+    if (timeout !== null) {
+        setTimeout(hideArduinoLoading, timeout);
+    }
+}
+
+function replaceButtonText(buttonId, text) {
+    'use strict';
+    if (document.getElementById) {
+        var button = document.getElementById(buttonId);
+        if (button) {
+            if (button.childNodes[0]) {
+                button.childNodes[0].nodeValue = text;
+            } else if (button.value) {
+                button.value = text;
+            } else { //if (button.innerHTML) 
+                button.innerHTML = text;
+            }
+        }
+    }
+}
+
+function showFrame() {
+    'use strict';
+    var frame = document.getElementById("fb_frame");
+
+    if (frame.style.display === "none") {
+        frame.style.display = "block";
+        replaceButtonText("fb", "Piilota");
+    } else {
+        frame.style.display = "none";
+        replaceButtonText("fb", "Näytä");
+    }
+}
+
+
+
+function updateContent(id, url) {
+    'use strict';
+    if (document.getElementById) {
+        var element = document.getElementById(id);
+        if (element) {
+            element.src = url;
+            showStreamLoading();
+        }
+    }
+}
+
+function modal() {
+    'use strict';
+    /* 
+    1. Get the modal
+    2. Get the image and insert it inside the modal - use its "alt" text as a caption
+    3. Get the <span> element that closes the modal 
+    */
+    var modali = document.getElementById('myModal'),
+        img = document.getElementById('myImg'),
+        modalImg = document.getElementById("img01"),
+        captionText = document.getElementById("caption"),
+        span = document.getElementsByClassName("close")[0];
+    
+    img.onclick = function () {
+        modali.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    };
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modali.style.display = "none";
+    };
+}
+
