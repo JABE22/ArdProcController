@@ -1,8 +1,8 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+    Created on : 28.4.2018, 12:57:09
+    Author     : Jarno Matarmaa  ( Tampere University )
+    Project    : Arduino Uno controller website 2018-2019
+*/
 
 /*eslint-env browser*/
 /* exported hideStreamLoading, 
@@ -11,7 +11,6 @@
    updateContent, 
    modal 
 */
-
 
 function showStreamLoading() {
     'use strict';
