@@ -32,41 +32,65 @@ div.site-branding-text { /* Position text within site-branding */
     vertical-align: middle;
 }
 
-img {
-    margin-left: 20;
-    margin-right: 20;
+img.logo {
+    margin-left: 10px;
+    margin-right: 10px;
     width: 50%;
+    height: auto;
 }
 
+img {
+    align-self: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+}
+
+/*
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 80%;
 }
+*/
 
 /* Image gallery styles */
 
 div.gallery {
+    padding-top: 15px;
+    padding-bottom: 15px;
     border: 2px solid #00979C;
-    background-color: #00979C;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgba(0,151,156, .6);
     font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
     color: black;
+    
 }
 
-div.gallery:hover {
-    border: 5px solid #00979C;
+div.gallery img:hover {
+    filter: grayscale(50%);
+    transform: scale(1.05);
 }
 
 div.gallery img {
+    border-radius: 3px 3px 3px 3px;
+    transition: 0.7s;
+    padding: 10px;
+    width: 95%;
+    height: auto;
+    /*
     width: 100%;
     height: auto;
+    */
 }
 
+/*
 div.desc {
     padding: 15px;
     text-align: center;
 }
+*/
 
 * {
     box-sizing: border-box;

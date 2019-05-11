@@ -1,16 +1,16 @@
 /* 
-    Created on : 28.4.2018, 12:57:09
-    Author     : Jarno Matarmaa  ( Tampere University )
-    Project    : Arduino Uno controller website 2018-2019
-*/
+ Created on : 28.4.2018, 12:57:09
+ Author     : Jarno Matarmaa  ( Tampere University )
+ Project    : Arduino Uno controller website 2018-2019
+ */
 
 /*eslint-env browser*/
 /* exported hideStreamLoading, 
-   showArduinoLoading, 
-   showFrame, 
-   updateContent, 
-   modal 
-*/
+ showArduinoLoading, 
+ showFrame, 
+ updateContent, 
+ modal 
+ */
 
 function showStreamLoading() {
     'use strict';
@@ -81,16 +81,16 @@ function updateContent(id, url) {
 function modal() {
     'use strict';
     /* 
-    1. Get the modal
-    2. Get the image and insert it inside the modal - use its "alt" text as a caption
-    3. Get the <span> element that closes the modal 
-    */
+     1. Get the modal
+     2. Get the image and insert it inside the modal - use its "alt" text as a caption
+     3. Get the <span> element that closes the modal 
+     */
     var modali = document.getElementById('myModal'),
-        img = document.getElementById('myImg'),
-        modalImg = document.getElementById("img01"),
-        captionText = document.getElementById("caption"),
-        span = document.getElementsByClassName("close")[0];
-    
+            img = document.getElementById('myImg'),
+            modalImg = document.getElementById("img01"),
+            captionText = document.getElementById("caption"),
+            span = document.getElementsByClassName("close")[0];
+
     img.onclick = function () {
         modali.style.display = "block";
         modalImg.src = this.src;
@@ -102,3 +102,15 @@ function modal() {
     };
 }
 
+function saveImage(imgId) {
+    var image = document.getElementById(imgId);
+    if (image !== null) {
+        
+    } else {
+        console.log("Image not found with id " + imgId);
+    }
+}
+
+function getImage(img) {
+    
+}
