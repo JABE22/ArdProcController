@@ -58,7 +58,10 @@ IP-Camera located to address 192.168.1.64 which is hard coded too.
             <!-- Iframe for Arduino Uno control page. Not displayed by default -->
             <iframe class="feedback" id="fb_frame" name="fb_frame" 
                     onload="hideArduinoLoading()" style="display: none">               
-            </iframe> 
+            </iframe>
+            <iframe class="feedback" id="sc_frame" name="sc_frame"
+                    style="display: none">
+            </iframe>
             <button class="fb" id="fb" type="button" onclick="showFrame()">Näytä</button>
             <!-- Arduino Board loading spinner -->
             <div id="arduino_loading">
