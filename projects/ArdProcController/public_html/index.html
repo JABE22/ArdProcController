@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+This is Arduino Uno controller website. Controller IP-address is hard coded to
+192.168.1.50. Site contains Arduino control buttons and picture capture frame from
+IP-Camera located to address 192.168.1.64 which is hard coded too.
 -->
 
 <html>
     <head>
-
         <script type="text/javascript" src="scripts/functions.js"></script>
         <link rel='stylesheet' type='text/css' href='css/web_index_styles.css' />
         <meta charset="UTF-8">
@@ -35,7 +34,7 @@ and open the template in the editor.
             <h3>LED valaisimen ja kameran hallinta</h3>          
             <!-- Arduino controller function buttons -->
             <br />
-            <a href="http://www.koney.fi" id="led1" target="fb_frame" 
+            <a href="http://192.168.1.50/?button1on" id="led1" target="fb_frame" 
                onclick="showArduinoLoading(null)">LED ON</a>
             <a href="http://192.168.1.50/?button1off" id="led0" target="fb_frame" 
                onclick="showArduinoLoading(null)">LED OFF</a>
@@ -66,7 +65,6 @@ and open the template in the editor.
                 <div id="ard_load_spinner"></div> 
                 <h4 class="ard_spinner_text">Yhdistetään</h4>
             </div>
-
             <script>
                 /* Timeout not necessary, because feedback-frame calls 
                  * hideArduinoLoading() method instantly. */
@@ -77,19 +75,17 @@ and open the template in the editor.
         </div>
 
         <div class="resp-container">
-
             <div id="stream_loading">
                 <div id="str_load_spinner"></div> 
                 <h4 class="str_spinner_text">Haetaan kuvaa</h4>
             </div>
 
-
             <script>
                 showStreamLoading();
             </script>
-
+            
             <!--src="http://192.168.1.64/ISAPI/Streaming/channels/101/picture"-->
-
+            
             <!-- The Modal -->
             <img class="stream"
                  id="myImg"
@@ -109,7 +105,7 @@ and open the template in the editor.
             </script>
 
             <button class="fb" id="update_button" type="button" 
-                    onclick="updateContent('myImg', 'http://192.168.1.60/ISAPI/Streaming/channels/101/picture')">
+                    onclick="updateContent('myImg', 'http://192.168.1.64/ISAPI/Streaming/channels/101/picture')">
                 Päivitä</button>
         </div>
         <br />

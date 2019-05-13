@@ -69,13 +69,9 @@ function showFrame() {
 
 function updateContent(id, url) {
     'use strict';
-    if (document.getElementById) {
-        var element = document.getElementById(id);
-        if (element) {
-            element.src = url;
-            showStreamLoading();
-        }
-    }
+    var element = document.getElementById(id);
+    element.src = url;
+    showStreamLoading();
 }
 
 function modal() {
@@ -105,12 +101,12 @@ function modal() {
 function saveImage(imgId) {
     var image = document.getElementById(imgId);
     if (image !== null) {
-        
+
     } else {
         console.log("Image not found with id " + imgId);
     }
 }
 
 function getImage(img) {
-    
+
 }
