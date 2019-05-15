@@ -107,6 +107,3 @@ function saveImage(imgId) {
     }
 }
 
-function getImage(img) {
-
-}

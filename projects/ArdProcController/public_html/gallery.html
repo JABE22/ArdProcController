@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Creator: 
+Jarno Matarmaa
+Tampere University
+JAMA Softwares ©2019
+
+Description:
+Gallery site for Process control pictures. Stored in folder and showing folder 
+content in page.
 -->
 
 <html>
     <head>
+        <script type="text/javascript" src="scripts/imgLoader.js"></script>
         <link rel='stylesheet' type='text/css' href='css/images_styles.css' />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,19 +37,37 @@ and open the template in the editor.
         </header>
         <br />
         <div class="responsive">
-            <div class="gallery"> 
-                <a target="_blank" href="css/gallery_img/fendt_720.jpg">
-                    <img src="css/gallery_img/fendt_720.jpg" alt="kuva.jpg" width="600" height="400">
+            <div class="gallery" id="g_div"> 
+                <script>
+                    loadFolder("css/gallery_img/", 8);
+                </script>
+                
+<!--                <a target="_self" href="css/gallery_img/pic_01.jpg">
+                    <img src="css/gallery_img/pic_01.jpg" alt="">
                 </a>
-                <a target="_blank" href="css/gallery_img/fendt_720_vesi.JPG">
-                    <img src="css/gallery_img/fendt_720_vesi.JPG" alt="kuva.jpg" width="600" height="400">
+                <a target="_self" href="css/gallery_img/pic_02.JPG">
+                    <img src="css/gallery_img/pic_02.JPG" alt="">
                 </a>
-                <a target="_blank" href="css/gallery_img/highlanders.jpg">
-                    <img src="css/gallery_img/highlanders.jpg" alt="kuva.jpg" width="600" height="400">
+                <a target="_self" href="css/gallery_img/pic_03.jpg">
+                    <img src="css/gallery_img/pic_03.jpg" alt="">
                 </a>
-                <a target="_blank" href="css/gallery_img/hitachi_135_karkkila.JPG">
-                    <img src="css/gallery_img/hitachi_135_karkkila.JPG" alt="kuva.jpg" width="600" height="400">
+                <a target="_self" href="css/gallery_img/pic_04.JPG">
+                    <img src="css/gallery_img/pic_04.JPG" alt="">
                 </a>
+                <a target="_self" href="css/gallery_img/pic_05.jpg">
+                    <img src="css/gallery_img/pic_05.jpg" alt="">
+                </a>
+                <a target="_self" href="css/gallery_img/pic_06.JPG">
+                    <img src="css/gallery_img/pic_06.JPG" alt="">
+                </a>
+                <a target="_self" href="css/gallery_img/pic_07.jpg">
+                    <img src="css/gallery_img/pic_07.jpg" alt="">
+                </a>
+                <a target="_self" href="css/gallery_img/pic_08.JPG">
+                    <img src="css/gallery_img/pic_08.JPG" alt="" 
+                         onerror="this.src='css/img/jama.softwares.logo.png'">
+                </a>-->
+                
                 <!--<div class="desc">Maatalousyhtymä Matarmaa / Konekuljettajat Matarmaa Ky</div>-->
             </div>
         </div>

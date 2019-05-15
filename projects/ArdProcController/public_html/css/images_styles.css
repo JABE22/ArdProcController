@@ -10,7 +10,7 @@ and open the template in the editor.
 body {
     margin:40px 100px; padding:0px;
     text-align:left;
-    background-image: url("img/ohra_pelto.JPG");
+    background-image: url("img/ohra_pelto.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -37,6 +37,10 @@ img.logo {
     margin-right: 10px;
     width: 50%;
     height: auto;
+}
+
+img.jama {
+    border-radius: 15px 15px 15px 15px;
 }
 
 img {
