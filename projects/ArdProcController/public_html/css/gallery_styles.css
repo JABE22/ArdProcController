@@ -21,7 +21,7 @@ body {
 div.site-logo {
     float: left; /* Must be float left !! */
     height: 120px;
-    margin-right: 20px;
+    margin-right: 40px;
     display: inline-block;
 }
 
@@ -38,6 +38,13 @@ div.menu-buttons {
     float: right;
 }
 
+div.site-header {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: auto 0;
+}
+
 
 /* Image settings */
 img.logo {
@@ -47,10 +54,7 @@ img.logo {
     height: auto;
 }
 
-img {
-    border-radius: 3px;
-    margin: 15px;
-}
+
 
 
 /* Image gallery styles */
@@ -110,8 +114,15 @@ a:hover {color:orange;}     /* mouse over link */
 a:active {color:green;}     /* selected link */
 a:valid {color:greenyellow;}
 
+h1 {
+    margin-top: 40px;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+    text-shadow: 0px 0px 8px white;
+}
+
 h2 {
-    margin-top: 50px;
+    float: left;
+    display: inline-block;
     font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
 }
 

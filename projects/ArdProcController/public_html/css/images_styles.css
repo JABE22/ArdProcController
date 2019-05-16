@@ -17,10 +17,10 @@ body {
 }
 
 div.site-logo {
-    display: inline-block;
     float: left; /* Must be float left !! */
     height: 120px;
-    margin-right: 20px;
+    margin-right: 40px;
+    display: inline-block;
 }
 
 div.site-branding-text { /* Position text within site-branding */
@@ -51,9 +51,8 @@ div.site-header {
 }
 
 img.logo {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 50%;
+    display: inline;
+    width: 100px;
     height: auto;
 }
 
@@ -61,15 +60,8 @@ img.jama {
     border-radius: 15px 15px 15px 15px;
 }
 
-img {
-    align-self: center;
-    margin-left: 5px;
-    width: 100%;
-}
-
 
 /* Image gallery styles */
-
 div.gallery {
     display: block;
     margin-left: auto;
@@ -176,7 +168,7 @@ a.other {
 }
 
 h1 {
-    margin-top: 50px;
+    margin-top: 40px;
     font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
     text-shadow: 0px 0px 8px white;
 }
@@ -184,7 +176,6 @@ h1 {
 h2 {
     float: left;
     display: inline-block;
-    text-align: left;
     font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
 }
 

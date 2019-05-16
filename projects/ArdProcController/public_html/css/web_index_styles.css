@@ -15,10 +15,10 @@ body {
 
 /* Gallery site top */
 div.site-logo {
-    display: inline-block;
     float: left; /* Must be float left !! */
     height: 120px;
-    margin-right: 20px;
+    margin-right: 40px;
+    display: inline-block;
 }
 
 div.site-branding-text { /* Position text within site-branding */
@@ -38,14 +38,12 @@ div.menu-buttons {
 div.arduino-buttons {
     display: inline;
     float: left;
+    text-align: center;
     margin-right: 15px;
     margin-bottom: 15px;
     padding: 15px 32px;
-    border-color:black;
-    border-top:2px solid;
-    border-bottom:2px solid;
-    border-right:2px solid;
-    border-left:2px solid;
+    border-color: black;
+    border: 2px solid;
     border-radius:3px 3px 3px;
     -o-border-radius:3px 3px 3px;
     -webkit-border-radius:3px 3px 3px;
@@ -84,10 +82,7 @@ iframe.feedback {
     height:150px;
     padding: 2px 2px;
     margin-top: 1px;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-    border-left: 2px solid;
+    border: 2px solid;
     border-radius: 7px 7px 7px;
     -o-border-radius: 7px 7px 7px;
     -webkit-border-radius: 7px 7px 7px;
@@ -157,9 +152,8 @@ iframe.feedback {
 
 /* Image component styles */
 img.logo {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 50%;
+    display: inline;
+    width: 100px;
     height: auto;
 }
 
@@ -245,7 +239,7 @@ img.stream {
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease-in;
 }
 
 .close:hover,
@@ -271,7 +265,7 @@ video {
 
 /* Header and subheader styles */
 h1 {
-    margin-top: 50px;
+    margin-top: 40px;
     font-family: Arial, "Trebuchet MS", Helvetica, sans-serif;
     text-shadow: 0px 0px 8px white;
 }
@@ -380,18 +374,14 @@ f2 {
 a.nostyle { }
 
 a.other {
+    display: inline-block;
     text-decoration: none;
     text-align: center;
     width: auto;
     height: auto;
     padding: 10px 10px;
-    margin-top: 10px;
-    margin-left: 30%;
-    margin-bottom: 20px;
-    border-top:2px solid black;
-    border-bottom:2px solid black;
-    border-right:2px solid black;
-    border-left:2px solid black;
+    margin: 20px;
+    border: 2px solid black;
     border-radius:7px 7px 7px;
     -o-border-radius:7px 7px 7px;
     -webkit-border-radius:7px 7px 7px;
@@ -400,7 +390,6 @@ a.other {
     -moz-border-radius:7px 7px 7px;
     background-color: goldenrod;
     opacity: 0.9;
-    display: inline-block;
     cursor: pointer;
 }
 
