@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script type="text/javascript" src="scripts/imgLoader.js"></script>
+        <link rel='stylesheet' type='text/css' href='css/gallery_styles.css' />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kuivurin kuvagalleria</title>
+    </head>
+    <body>
+        <div class="site-logo">
+            <img class='logo' src="css/img/dome.png" alt="arduino_logo"> 
+        </div>   
+        <div class="site-branding-text">
+            <h2 id="site-title">Kaikki kuvat</h2>
+        </div>
+        <div class="menu-buttons">
+            <a class="menu" href="gallery.html">Takaisin</a>
+            <a class="menu" href="index.html">Etusivu</a>
+        </div>
+        <hr />
+        <br />
+        <!--<div class="responsive">-->
+        <div class="gallery" id="g_div" >
+            <script>
+                loadFolder("css/gallery_img/", 70);
+            </script>
+        </div> 
+        <!--</div>-->
+        <div class="footer">
+            <footer>Created by Jarno Matarmaa -JAMA Softwares 2018®-</footer>
+        </div>
+    </body>
+</html>

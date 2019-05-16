@@ -13,24 +13,29 @@ body {
     background-position: center center;
 }
 
-div.site-branding { /* Position Logo and Text  */
-    float: left;
-    transition: .5s ease;
-}
-
-div.site-branding-logo { /* Position logo within site-branding */
-    display: inline;
-    vertical-align: middle;
+/* Gallery site top */
+div.site-logo {
+    display: inline-block;
+    float: left; /* Must be float left !! */
+    height: 120px;
+    margin-right: 20px;
 }
 
 div.site-branding-text { /* Position text within site-branding */
     display: inline-block;
+    height: 120px;
     width: auto;
     margin: auto 0;
-    vertical-align: middle;
 }
 
-div.site-buttons {
+div.menu-buttons {
+    display: inline-block;
+    float: right;
+    height: 120px;
+}
+
+
+div.arduino-buttons {
     display: inline;
     float: left;
     margin-right: 15px;
@@ -46,6 +51,13 @@ div.site-buttons {
     -webkit-border-radius:3px 3px 3px;
     -moz-border-radius:3px 3px 3px;
     background-color: rgba(0,151,156, .3);
+}
+
+div.site-header {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: auto 0;
 }
 
 div.resp-container {
@@ -144,7 +156,7 @@ iframe.feedback {
 
 
 /* Image component styles */
-img {
+img.logo {
     margin-left: 10px;
     margin-right: 10px;
     width: 50%;
@@ -259,9 +271,8 @@ video {
 
 /* Header and subheader styles */
 h1 {
-    float: right;
-    text-align: left;
-    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+    margin-top: 50px;
+    font-family: Arial, "Trebuchet MS", Helvetica, sans-serif;
     text-shadow: 0px 0px 8px white;
 }
 
@@ -401,11 +412,8 @@ a.menu {
     height: auto;
     padding: 10px 10px;
     margin-left: 10px;
-    margin-top: 30px;
-    border-top:2px solid;
-    border-bottom:2px solid;
-    border-right:2px solid;
-    border-left:2px solid;
+    margin-top: 60px;
+    border: 2px solid;
     border-radius:7px 7px 7px;
     -o-border-radius:7px 7px 7px;
     -webkit-border-radius:7px 7px 7px;

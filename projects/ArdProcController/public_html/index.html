@@ -20,24 +20,23 @@ located to address 192.168.1.64, also hard coded.
         <title>Kuivurin kamera</title>
     </head>
     <body>
-        <div class="site-branding">
-            <div class="site-branding-logo">
-                <img src="css/img/arduino_logo.png" alt="arduino_logo">
-            </div>
+        <div class="site-logo">
+            <img class="logo" src="css/img/arduino_logo.png" alt="arduino_logo">
         </div>
-        <br />
         <div class="site-branding-text">
-            <h1 id="site-title">KUIVURIN PROSESSIVALVONTA</h1>
+            <h1 id="site-title">Kuivurin Prosessivalvonta</h1>
         </div>
-        <a class="menu" href="gallery.html">Kuvagalleria</a>
-        <a class="menu" href="http://192.168.1.50/" target="_blank">Kontrolleri</a>
+        <div class="menu-buttons">
+            <a class="menu" href="gallery.html">Kuvat</a>
+            <a class="menu" href="http://192.168.1.50/" target="_blank">Kontrolleri</a>
+        </div>
         <br />
         <hr />
-        <header>
+        <div class="site-header">
             <h2>Kontrollerin etäkäyttö</h2>
-        </header>
+        </div>
         <br />
-        <div class="site-buttons">
+        <div class="arduino-buttons">
             <h3>LED valaisimen ja kameran hallinta</h3>          
             <!-- Arduino controller function buttons -->
             <br />
@@ -93,9 +92,9 @@ located to address 192.168.1.64, also hard coded.
             <script>
                 showStreamLoading();
             </script>
-            
+
             <!--src="http://192.168.1.64/ISAPI/Streaming/channels/101/picture"-->
-            
+
             <!-- The Modal -->
             <img class="stream"
                  id="myImg"
@@ -115,7 +114,7 @@ located to address 192.168.1.64, also hard coded.
             </script>
 
             <button class="fb" id="update_button" type="button" 
-                    onclick="updateContent('myImg', 'http://192.168.1.64/ISAPI/Streaming/channels/101/picture')">
+                    onclick="updateContent('myImg', 'css/img/jama.softwares.logo.png')">
                 Päivitä</button>
         </div>
         <br />

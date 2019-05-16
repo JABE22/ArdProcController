@@ -69,8 +69,7 @@ function showFrame() {
 
 function updateContent(id, url) {
     'use strict';
-    var element = document.getElementById(id);
-    element.src = url;
+    document.getElementById(id).src = url;
     showStreamLoading();
 }
 
