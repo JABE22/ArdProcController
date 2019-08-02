@@ -1,11 +1,14 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 16.5.2019, 20:10:46
     Author     : Jarno Matarmaa  ( University of Tampere )
+
+    Small picture gallery page styles. Most of CSS class styles would be combined 
+    with other page styles. Especially site header is now equal with home page 
+    (index.html) and (gallery.html). 
+
+    NOTE: This file will be removed later when combined with others CSS style files.
+    If not removed, renaming file and CSS classes recommended.
+    
 */
 body {
     margin:40px 100px; padding:0px;
@@ -53,8 +56,6 @@ img.logo {
     width: 100px;
     height: auto;
 }
-
-
 
 
 /* Image gallery styles */

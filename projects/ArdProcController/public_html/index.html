@@ -31,7 +31,7 @@ located to address 192.168.1.64, also hard coded.
             <a class="menu" href="http://192.168.1.50/" target="_blank">Kontrolleri</a>
         </div>
         <br />
-        <hr />
+        <hr class='type_1'/>
         <div class="site-header">
             <h2>Kontrollerin etäkäyttö</h2>
         </div>
@@ -95,14 +95,23 @@ located to address 192.168.1.64, also hard coded.
             </script>
 
             <!--src="http://192.168.1.64/ISAPI/Streaming/channels/101/picture"-->
-
+            
             <!-- The Modal -->
+            
+            <div class="booth">
+                <video id="video" width="400" height="300" autoplay></video>
+            </div>
+            
+            <script src="scripts/video.js"></script>
+            
             <img class="stream"
                  id="myImg"
                  src="http://192.168.1.64/ISAPI/Streaming/channels/101/picture"
                  onerror="this.src='css/img/cds-hikvision.jpg'" 
                  alt="Yhteyttä kameraan ei voitu muodostaa" 
                  onload="hideStreamLoading()">
+
+
 
             <div id="myModal" class="modal">
                 <span class="close">&times;</span>
@@ -115,7 +124,7 @@ located to address 192.168.1.64, also hard coded.
             </script>
 
             <button class="fb" id="update_button" type="button" 
-                    onclick="updateContent('myImg', 'css/img/jama.softwares.logo.png')">
+                    onclick="updateContent('myImg', 'http://192.168.1.64/ISAPI/Streaming/channels/101/picture')">
                 Päivitä</button>
         </div>
         <br />

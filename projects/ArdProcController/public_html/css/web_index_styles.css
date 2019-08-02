@@ -55,13 +55,30 @@ div.site-header {
     display: inline-block;
     width: auto;
     height: auto;
+    min-width: 500px;
     margin: auto 0;
 }
+
+/* will be used later
+hr.type_1 {
+    border: 0;
+    height: 10px;
+    background-image: url('img/ohrajyvat_line.png');
+    background-repeat: no-repeat;
+}
+*/
 
 div.resp-container {
     min-height: 460px; 
     position: relative;
     overflow: hidden;
+}
+
+.booth {
+    width:400px;
+    background:#ccc;
+    border:10px solid #ddd;
+    margin:0 auto;
 }
 
 
