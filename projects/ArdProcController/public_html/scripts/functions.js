@@ -12,6 +12,21 @@
  modal 
  */
 
+/* Button styles for status checking, not used
+var button = document.querySelector('.button');
+
+button.onclick = function () {
+ var red = Math.floor(Math.random() * 256);
+ var blue = Math.floor(Math.random() * 256);
+ var green = Math.floor(Math.random() * 256);
+
+ this.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+};
+*/
+
+// Math.floor(Math.random() * 256) [0-255]
+// rgb(255,255,255)
+
 function showStreamLoading() {
     'use strict';
     document.getElementById("stream_loading").style.display = "block";
@@ -104,5 +119,18 @@ function saveImage(imgId) {
     } else {
         console.log("Image not found with id " + imgId);
     }
+}
+
+function autoResize(id) {
+    var newheight;
+    var newwidth;
+
+    if (document.getElementById) {
+        newheight = document.getElementById(id).contentWindow.document.body.scrollHeight;
+        newwidth = document.getElementById(id).contentWindow.document.body.scrollWidth;
+    }
+
+    document.getElementById(id).height = (newheight) + "px";
+    document.getElementById(id).width = (newwidth) + "px";
 }
 

@@ -11,8 +11,10 @@ function loadFolder(folder, picAmount) {
     
     while(i<picAmount) {
         if (i<10) {
+            //imageName = "-929-0" + i + "-lg.jpeg"
             imageName = "pic_0" + i + ".jpg";
         } else {
+            //imageName = "-929-" + i + "-lg.jpeg"
             imageName = "pic_" + i + ".jpg";
         }
         loadImage(folder + imageName);
