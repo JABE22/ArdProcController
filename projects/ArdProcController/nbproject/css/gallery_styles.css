@@ -1,0 +1,142 @@
+/* 
+    Created on : 16.5.2019, 20:10:46
+    Author     : Jarno Matarmaa  ( University of Tampere )
+
+    Small picture gallery page styles. Most of CSS class styles would be combined 
+    with other page styles. Especially site header is now equal with home page 
+    (index.html) and (gallery.html). 
+
+    NOTE: This file will be removed later when combined with others CSS style files.
+    If not removed, renaming file and CSS classes recommended.
+    
+*/
+body {
+    margin:40px 100px; padding:0px;
+    text-align:left;
+    background-image: url("img/ohra_pelto.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/* Gallery site top */
+div.site-logo {
+    float: left; /* Must be float left !! */
+    height: 120px;
+    margin-right: 40px;
+    display: inline-block;
+}
+
+div.site-branding-text {
+    display: inline-block;
+    width: auto;
+    height: 120px;
+    margin: auto 0;
+}
+
+div.menu-buttons {
+    height: 120px;
+    display: inline-block;
+    float: right;
+}
+
+div.site-header {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: auto 0;
+}
+
+
+/* Image settings */
+img.logo {
+    transition: 1.5s;
+    display: inline;
+    width: 100px;
+    height: auto;
+}
+
+
+/* Image gallery styles */
+div.gallery {
+    display: block;
+    text-align: center;
+    width: auto;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border: 2px solid #00979C;
+    border-radius: 5px;
+    background-color: rgba(0,151,156, .6);
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    color: black;  
+}
+
+div.gallery img:hover {
+    filter: grayscale(50%);
+    transform: scale(1.1);
+}
+
+div.gallery img {
+    border-radius: 3px;
+    transition: 0.7s;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+}
+
+a.menu {
+    float: right;
+    display: inline-block;
+    text-decoration:none;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin-top: 60px;
+    border: 2px solid;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    -moz-border-radius:7px 7px 7px;
+    background-color:#00979C;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+a:link {color:white;}       /* unvisited link */
+a:visited {color:white;}    /* visited link */
+a:hover {color:orange;}     /* mouse over link */
+a:active {color:green;}     /* selected link */
+a:valid {color:greenyellow;}
+
+h1 {
+    margin-top: 40px;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+    text-shadow: 0px 0px 8px white;
+}
+
+h2 {
+    float: left;
+    display: inline-block;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* Style the footer */
+div.footer {
+    display: block;
+    text-align: center;
+    color: whitesmoke;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: rgba(0,151,156, .6);
+    width: 100%;
+}

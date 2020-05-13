@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+Creator: 
+Jarno Matarmaa
+Tampere University
+JAMA Softwares ©2019
+
+Description:
+Gallery site for Process control pictures. Showing latest pictures in page which 
+are stored in some folder. Only few latest and supposing most relevant pictures 
+presented in large size. 
+-->
+
+<html>
+    <head>
+        <script type="text/javascript" src="scripts/imgLoader.js"></script>
+        <link rel='stylesheet' type='text/css' href='css/images_styles.css' />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kuivurin kamerakuvat</title>
+    </head>
+    <body>
+        <div class="site-logo">
+            <img class='logo' src="css/img/dome.png" alt="camera_logo">
+        </div>
+        <div class="site-branding-text">
+            <h1 id="site-title">Kuivurin Prosessivalvonta</h1>
+        </div>
+        <div class="menu-buttons">
+            <a class="menu" href="http://192.168.1.50/" target="_blank">Kontrolleri</a>
+            <a class="menu" href="index.html">Etusivu</a>
+        </div>
+        <hr />
+        <div class="site-header">
+            <h2>Kameran kuvat</h2>
+        </div>
+        <div class="other-buttons">
+            <a class="other" href="big_gallery.html">
+                Galleria
+            </a>
+        </div>
+        <div class="gallery" id="g_div"> 
+            <script>
+                loadFolder("css/gallery_img/", 8);
+            </script>
+
+            <!-- 
+            <a target="_self" href="css/gallery_img/pic_01.jpg">
+            <img src="css/gallery_img/pic_01.jpg" alt="">
+            </a>
+            <a target="_self" href="css/gallery_img/pic_02.JPG">
+            <img src="css/gallery_img/pic_02.JPG" alt="">
+            </a>
+            <a target="_self" href="css/gallery_img/pic_03.jpg">
+            <img src="css/gallery_img/pic_03.jpg" alt="">
+            </a>
+            <a target="_self" href="css/gallery_img/pic_04.JPG">
+            <img src="css/gallery_img/pic_04.JPG" alt="">
+            </a>
+            -->
+
+            <!--
+            <div class="desc">
+                Maatalousyhtymä Matarmaa / Konekuljettajat Matarmaa Ky
+            </div>
+            -->
+        </div>
+
+        <br />
+        <div class="footer">
+            <footer>Created by Jarno Matarmaa -JAMA Softwares 2018®-</footer>
+        </div>
+        <br />
+    </body>
+</html>

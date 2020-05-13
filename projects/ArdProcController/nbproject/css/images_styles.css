@@ -1,0 +1,199 @@
+/* 
+    Created on : 16.7.2018, 22:21:09
+    Author     : Jarno Matarmaa  ( University of Tampere )
+
+    CSS styles for gallery.html page. Very similar with index.html styles.
+
+    NOTE: Waiting for uniforming with other CSS files. 
+*/
+body {
+    margin:40px 100px; padding:0px;
+    text-align:left;
+    background-image: url("img/ohra_pelto.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+div.site-logo {
+    float: left; /* Must be float left !! */
+    height: 120px;
+    margin-right: 40px;
+    display: inline-block;
+}
+
+div.site-branding-text { /* Position text within site-branding */
+    display: inline-block;
+    height: 120px;
+    width: auto;
+    margin: auto 0;
+}
+
+div.menu-buttons {
+    display: inline-block;
+    float: right;
+    height: 120px;
+}
+
+div.other-buttons {
+    display: inline-block;
+    float: right;
+    width: auto;
+    height: auto;
+}
+
+div.site-header {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: auto 0;
+}
+
+img.logo {
+    display: inline;
+    width: 100px;
+    height: auto;
+}
+
+img.jama {
+    border-radius: 15px 15px 15px 15px;
+}
+
+
+/* Image gallery styles */
+div.gallery {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #00979C;
+    border-radius: 5px;
+    background-color: rgba(0,151,156, .6);
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+}
+
+div.gallery img:hover {
+    filter: grayscale(50%);
+    transform: scale(1.05);
+}
+
+div.gallery img {
+    border-radius: 3px;
+    transition: 0.7s;
+    padding: 10px;
+    width: 98%;
+    height: auto;
+}
+
+/*
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+.responsive {
+    padding: 0 6px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+*/
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a.menu {
+    float: right;
+    display: inline;
+    text-decoration:none;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin-top: 60px;
+    border: 2px solid;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    -moz-border-radius:7px 7px 7px;
+    background-color:#00979C;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+a:link {color:white;}       /* unvisited link */
+a:visited {color:white;}    /* visited link */
+a:hover {color:orange;}     /* mouse over link */
+a:active {color:green;}     /* selected link */
+a:valid {color:greenyellow;}
+a.other:hover {color: whitesmoke; box-shadow: 0px 0px 3px 3px greenyellow }
+
+a.other {
+    display: inline-block;
+    float: right;
+    text-decoration: none;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    margin-top: 10px;
+    margin-left: 30%;
+    margin-bottom: 20px;
+    border: 2px solid gray;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    -moz-border-radius:7px 7px 7px;
+    background-color: goldenrod;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+h1 {
+    margin-top: 40px;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+    text-shadow: 0px 0px 8px white;
+}
+
+h2 {
+    float: left;
+    display: inline-block;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h3 {
+    text-align: left;
+    text-decoration: underline;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* Style the footer */
+div.footer {
+    display: block;
+    text-align: center;
+    color: whitesmoke;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: rgba(0,151,156, .6);
+    width: 100%;
+}

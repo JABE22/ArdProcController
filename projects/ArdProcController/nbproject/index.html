@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+Creator: 
+Jarno Matarmaa
+Tampere University
+JAMA Softwares ©2019
+
+Description:
+This is ArduinoUno/EthernetShield controller website and control panel used in 
+camera/led system combination. Controller IP-address is hard coded to 192.168.1.50. 
+Site contains Arduino control buttons and picture capture frame from IP-Camera 
+located to address 192.168.1.64, also hard coded.
+-->
+
+<html>
+    <head>
+        <script type="text/javascript" src="scripts/index.js"></script>
+        <link rel='stylesheet' type='text/css' href='css/web_index_styles.css' />
+        <meta charset="UTF-8">
+        <title>Kuivurin kamera</title>
+    </head>
+    <body>
+        <div class="site-logo">
+            <img class="logo" src="css/img/dome.png" alt="camera_logo">
+        </div>
+        <div class="site-branding-text">
+            <h1 id="site-title">Kuivurin Prosessivalvonta</h1>
+        </div>
+        <div class="menu-buttons">
+            <a class="menu" href="gallery.html">Kuvat</a>
+            <a class="menu" href="http://192.168.1.50/" target="_blank">Kontrolleri</a>
+        </div>
+        <br />
+        <hr class='type_1'/>
+        <div class="site-header">
+            <h2>Kontrollerin etäkäyttö</h2>
+        </div>
+        <br />
+        <div class="arduino-buttons">
+            <img class="logo" src="css/img/arduino_logo.png" alt="arduino_logo">
+            <h3>LED valaisimen ja kameran hallinta</h3>          
+            <!-- Arduino controller function buttons -->
+            <br />
+            <a href="http://192.168.1.50/?button1on" id="led1" target="fb_frame" 
+               onclick="showArduinoLoading(null)">LED ON</a>
+            <a href="http://192.168.1.50/?button1off" id="led0" target="fb_frame" 
+               onclick="showArduinoLoading(null)">LED OFF</a>
+            <br />
+            <br />
+            <a href="http://192.168.1.50/?button2on" target="fb_frame"
+               onclick="showArduinoLoading(null)">CAM ON</a>
+            <a href="http://192.168.1.50/?button2off" target="fb_frame"
+               onclick="showArduinoLoading(null)">CAM OFF</a>
+            <br />
+            <br />
+            <a href="http://192.168.1.50/?button3on" target="fb_frame"
+               onclick="showArduinoLoading(null)">AUTO</a>
+            <a href="http://192.168.1.50/?button3off" target="fb_frame"
+               onclick="showArduinoLoading(null)">MANU</a>
+            <br />
+            <br />
+            <!-- Ping Arduino in address 192.168.1.50 -->
+            <a id="test_button" class="other" href="http://192.168.1.50/" target="fb_frame"
+               onclick="showArduinoLoading(20000)">Testaa yhteys</a> 
+            <!-- Iframe for Arduino Uno control page. Not displayed by default -->
+            <iframe class="feedback" id="fb_frame" name="fb_frame" 
+                    onload="hideArduinoLoading()"
+                    style="display: none">               
+            </iframe>
+            
+            <!-- This element is not used
+             <iframe class="feedback" id="sc_frame" name="sc_frame"
+                     style="display: none">
+             </iframe>
+            -->
+            
+            <button class="fb" id="fb" type="button" onclick="showFrame()">Näytä</button>
+            <!-- Arduino Board loading spinner -->
+            <div id="arduino_loading">
+                <div id="ard_load_spinner"></div> 
+                <h4 class="ard_spinner_text">Yhdistetään</h4>
+            </div>
+            <script>
+                /* Timeout not necessary, because feedback-frame calls 
+                 * hideArduinoLoading() method instantly. */
+                showArduinoLoading('5000');
+            </script>
+            <br />
+            <br />
+        </div>
+
+        <div class="resp-container">
+            <div id="stream_loading">
+                <div id="str_load_spinner"></div> 
+                <h4 class="str_spinner_text">Haetaan kuvaa</h4>
+            </div>
+
+            <script>
+                showStreamLoading();
+            </script>
+
+            <!--src="http://192.168.1.64/ISAPI/Streaming/channels/101/picture"-->
+
+            <!-- The Modal -->
+            <!-- Live stream from IP-camera  -->
+            <iframe id="video_stream" class="default"
+                    src="http://g0.ipcamlive.com/player/player.php?alias=5d4875950e657&autoplay=1" 
+                    onload="hideStreamLoading(); autoResize('video_stream')"
+                    allowfullscreen>
+            </iframe>
+
+            <!-- Parameter info for iframe attribute
+            Parameters:
+            - alias: alias of your camera
+            - skin: orange/white (orange is the default)
+            - autoplay=1: start video automatically (this parameter works on desktop computers only)
+            - mute=1: mute the audio 
+            - disablefullscreen=1: disable full screen button
+            - disablevideofit=1: disable video fit button
+            - timelapseplayerenabled=1: enable the Time-lapse Hub on the player
+            - disabledownloadbutton=1: disable time-lapse download button in time-lapse mode
+
+            Don't forget to adjust the height of the IFRAME according to the ASPECT RATIO of your camera! 
+            -->
+
+            <!-- Snapshot from the IP-camera
+            <img class="stream"
+                 id="myImg"
+                 src="http://admin:hikivisio18@192.168.1.64/ISAPI/Streaming/channels/101/picture"
+                 onerror="this.src='css/img/cds-hikvision.jpg'" 
+                 alt="" 
+                 onload="hideStreamLoading()">
+            -->
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" src="" id="img01" alt="Image not found">
+                <div id="caption"></div>
+            </div>
+
+            <script>
+                modal();
+            </script>
+
+            <button class="fb" id="update_button" type="button" 
+                    onclick="updateContent('myImg', 'http://192.168.1.64/ISAPI/Streaming/channels/101/picture')">
+                Päivitä</button>
+        </div>
+        <br />
+        <div class="footer">
+            <footer>Created by Jarno Matarmaa -JAMA Softwares 2018©-</footer>
+        </div>
+        <br />
+    </body>
+</html>

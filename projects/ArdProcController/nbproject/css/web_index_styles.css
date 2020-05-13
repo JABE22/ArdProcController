@@ -1,0 +1,476 @@
+/* 
+    Created on : 6.7.2018, 13:00:09
+    Author     : Jarno Matarmaa  ( Tampere University )
+    Project    : Arduino Uno controller website 2018-2019
+*/
+
+body {
+    margin:40px 100px; padding:0px;
+    text-align:left;
+    background-image: url("img/ohra_pelto.jpg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Gallery site top */
+div.site-logo {
+    float: left; /* Must be float left !! */
+    height: 120px;
+    margin-right: 40px;
+    display: inline-block;
+}
+
+div.site-branding-text { /* Position text within site-branding */
+    display: inline-block;
+    height: 120px;
+    width: auto;
+    margin: auto 0;
+}
+
+div.menu-buttons {
+    display: inline-block;
+    float: right;
+    height: 120px;
+}
+
+
+div.arduino-buttons {
+    display: inline;
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 15px 32px;
+    border-color: black;
+    border: 2px solid;
+    border-radius:3px 3px 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    background-color: rgba(0,151,156, .3);
+}
+
+div.site-header {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    min-width: 500px;
+    margin: auto 0;
+}
+
+/* will be used later
+hr.type_1 {
+    border: 0;
+    height: 10px;
+    background-image: url('img/ohrajyvat_line.png');
+    background-repeat: no-repeat;
+}
+*/
+
+div.resp-container {
+    min-height: 460px; 
+    position: relative;
+    overflow: hidden;
+}
+
+iframe.default {
+    width: 100%;
+    height: 600px;
+    border-color: #00979C;
+}
+
+iframe.feedback {
+    vertical-align: central;
+    width:300px;
+    height:150px;
+    padding: 2px 2px;
+    margin-top: 1px;
+    border: 2px solid;
+    border-radius: 7px 7px 7px;
+    -o-border-radius: 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px;
+    -moz-border-radius: 7px 7px 7px;
+}
+
+
+/* Content loading spinners */
+#stream_loading {
+    position: absolute;
+    vertical-align: middle;
+    height: auto;
+    left: 40%;
+    top: 35%; 
+    border-radius: 5px;
+    background: rgba(0,0,0,.4);
+}
+
+#str_load_spinner {
+    position: relative;
+    display: block;
+    margin-left: 35px;
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    box-shadow: 0px 0px 8px black;
+}
+
+#arduino_loading {
+    position: relative;
+    display: block;
+    height: auto;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+
+#ard_load_spinner {
+    position: relative;
+    display: block;
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    box-shadow: 0px 0px 8px black;
+}
+
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Image component styles */
+img.logo {
+    display: inline;
+    width: 100px;
+    height: auto;
+}
+
+img.stream {
+    width: 98%;
+    height: auto;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:3px 3px 3px;
+    -o-border-radius:3px 3px 3px;
+    -webkit-border-radius:3px 3px 3px;
+    -moz-border-radius:3px 3px 3px;
+    background-color: rgba(255,245,255,.3); 
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s ease-in;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+/* Video styles */
+video {
+    vertical-align: middle;
+}
+
+video.stream {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Header and subheader styles */
+h1 {
+    margin-top: 40px;
+    font-family: Arial, "Trebuchet MS", Helvetica, sans-serif;
+    text-shadow: 0px 0px 8px white;
+}
+
+h2 {
+    text-align: left;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h3 {
+    text-align: left;
+    text-decoration: underline;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h4 {
+    text-align: center;
+    font-family:Arial, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h4.str_spinner_text {
+    position: relative;
+    display: block;
+    margin: 15px 15px 15px 15px;
+    color: white;
+}
+
+h4.ard_spinner_text {
+    position: relative;
+    display: block;
+    text-align: left;
+    text-shadow: 0px 0px 2px white;
+}
+
+
+/* Link anf href button styles. Content box styles*/
+#update_button {
+    float: right;
+    margin-right: 1%;
+}
+
+button.fb {
+    display: block;
+    background-color: darkgray; 
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px 3px 3px;
+}
+
+button.fb:hover {box-shadow: 0px 0px 4px rgba(0,151,156,1.0)} /* mouse over link */
+button.fb:link {color:white;}                                 /* unvisited link */
+button.fb:active {color:whitesmoke;}        /* selected link */
+
+
+f1 {
+    text-align: center;
+    font: 18px Tahoma;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px white;
+    width:240px;
+    height:25px;
+    padding: 15px 32px;
+    margin-top: 10px;
+    border-color:white;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:7px 7px 7px;
+    background-color:greenyellow;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    -moz-border-radius:7px 7px 7px;
+    opacity: 0.7;
+    display: block;
+    cursor: pointer;
+}
+
+f2 {
+    text-align: center;
+    font: 18px Tahoma;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px white;
+    width:240px;
+    height:25px;
+    padding: 15px 32px;
+    margin-top: 10px;
+    border-color:white;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    -moz-border-radius:7px 7px 7px;
+    background-color:darkorange;
+    opacity: 0.7;
+    display: block;
+    cursor: default;
+}
+
+/* All a-element href buttons with default styles */
+a.nostyle { }
+
+a.other {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    -moz-border-radius:7px 7px 7px;
+    background-color: goldenrod;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+a.menu {
+    float: right;
+    text-decoration: none;
+    text-align: center;
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    margin-left: 10px;
+    margin-top: 60px;
+    border: 2px solid;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    -moz-border-radius:7px 7px 7px;
+    background-color: #00979C;
+    opacity: 0.7;
+    display: inline;
+    cursor: pointer;
+}
+
+a {
+    text-decoration:none;
+    text-align: center;
+    width:85px;
+    height:25px;
+    padding: 15px 32px;
+    border-color:black;
+    border-top:2px solid;
+    border-bottom:2px solid;
+    border-right:2px solid;
+    border-left:2px solid;
+    border-radius:7px 7px 7px;
+    -o-border-radius:7px 7px 7px;
+    -webkit-border-radius:7px 7px 7px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    -moz-border-radius:7px 7px 7px;
+    background-color:#00979C;
+    opacity: 0.8;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a:link {color:white;}       /* unvisited link */
+a:visited {color:white;}    /* visited link */
+a:hover {color:orange;}     /* mouse over link */
+a:active {color:green;}     /* selected link */
+a:valid {color:greenyellow;}
+
+a.other:link {color:white;}       /* unvisited link */
+a.other:visited {color:white;}    /* visited link */
+a.other:hover {box-shadow: 0px 0px 8px #00979C;}     /* mouse over link */
+a.other:active {color:whitesmoke;}     /* selected link */
+
+
+/* Style the footer */
+div.footer {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: rgba(0,151,156, .6);
+    width: 100%;
+    text-align: center;
+    color: whitesmoke;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family:"Trebuchet MS",Arial, Helvetica, sans-serif;
+
+}
